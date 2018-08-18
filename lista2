@@ -1,0 +1,96 @@
+#zad 1
+krotka = (0, 1, 2, 3, 4, "piec", "szesc", "siedem", "osiem", "dziewiec")
+print(krotka[:3])
+print(krotka[-2:])
+print(krotka[1::2])
+print(len(krotka))
+print(len(krotka[-2]))
+x = krotka
+print(x[:5] + (5,6) + x[-3:])
+print(x[:5], (5,6), x[-3:])
+
+#zad 2
+lista = ["Kasia", "Basia", "Marek", "Darek"]
+lista.append("Jozek")
+lista.extend(["Ania", "Basia"])
+print(sorted(lista))
+print(lista[3])
+print(lista[:2])
+print(lista[-2:])
+lista.remove("Basia")
+lista.remove("Basia")
+print(lista)
+print(len(lista))
+lista = tuple(lista)
+
+#zad 3
+lista = range(3,100,3)
+del lista[5::3]
+
+srednia = sum(lista) / len(lista)
+print(srednia)
+
+#zad 4
+krotka = ('a', 'b', 'c', 'd')
+x = krotka
+"".join(x)
+"    ".join(x)
+",   ".join(x)
+
+#wydrukuj na ekranie 100 zer oddzielonych tabulacjami -> ?
+
+#zad 5
+slubowanie = """
+wstepujac do wspolnoty akademickiej UW, slubuje uroczyscie:
+- zdobywac wiedze i umiejetnosci,
+- postepowac zgodnie z prawem, tradycja i dobrymi obyczajami akademickimi,
+- dbac o dobre imie UW i godnosc studenta.
+"""
+slubowanie.count("i")
+slubowanie.count(" i ")
+
+"UW" in slubowanie
+
+#zad 6
+
+from sys import getsizeof as rozmiar
+rozmiar(0)
+rozmiar(2**100)
+rozmiar(2**1000)
+rozmiar(True)
+rozmiar(False)
+
+isinstance(0, int)
+isinstance(0, float)
+isinstance(0.0, float)
+isinstance(True, bool)
+isinstance(True, int)
+
+#zad 7
+x = 2
+y = x
+print(x, y, id(x), id(y))
+y = 3
+print(x, y, id(x), id(y))
+
+x = [1,2]
+y = x
+print(x, y, id(x), id(y))
+y[1] = 3
+print(x, y, id(x), id(y))
+
+#zad 8
+#a).
+x = (a, b, c) = (1, 2, 3)
+print(x, a, b, c)
+#b).
+x = a, b, c = 1, 2, 3
+print(x, a, b, c)
+#c).
+a = 1
+b = "jeden"
+a, b = b, a
+print(a, b)
+
+
+
