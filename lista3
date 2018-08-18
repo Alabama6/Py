@@ -1,0 +1,134 @@
+# zad1 lista 3:
+even = range(2,100,2)
+
+a,b,c,*d = even
+print(a)
+print(b)
+print(c)
+print(d)
+
+a,b,c,*_ = even
+print("_ =", _)
+start, *pomoc, end = even
+print("start = ",start)
+print("end = ", end)
+
+lista = pomoc
+print(pomoc)
+
+# zad 2 lista 3:
+squares = [x ** x for x in range(0,10)]
+print(squares)
+
+for i, items in enumerate(squares):
+    print(i, items)
+
+
+lista = []
+for x in range(0,10):
+    lista.append(x ** x)
+print("lista = ", lista)
+
+for i, items in enumerate(lista):
+    print(i, items)
+
+
+#zad 3 lista 3:
+i = 0
+
+while i < 10:
+    if i % 2 == 0:
+        print(i)
+
+    i += 1
+
+
+# ZAD 4 LISTA 3
+grocery = ['jajka', 'mleko', 'chleb', 'maslo', 'piwo']
+n_items = {}
+prohibited = ['wodka', 'piwo', 'wino']
+
+for product in grocery:
+    user_input = input("Produkt {}:  sztuk = ".format(product))
+    n_items[product]=user_input
+
+a = list(n_items.keys())
+
+
+#if n_items.keys() == prohibited():
+ #   n_items.values() = 0
+#print(n_items)
+
+
+#zad 5 lista 3
+#jak zrobic zeby kontynuowal jezeli uzykownik nie trafi?
+
+from random import randint
+liczba = randint(0,100)
+print(liczba)
+
+user_input = input("Odgadnij wylosowana liczbe z zakresu od 0 do 99: ")
+print(type(user_input))
+user_input = int(user_input)
+print(type(user_input))
+
+if (liczba - user_input > 50):
+    print("Podana liczba jest duzo mniejsza")
+elif (liczba - user_input > 10):
+    print("Podana liczba jest mniejsza")
+elif (liczba - user_input < 10 and user_input - liczba != 0):
+    print("Podana liczba jest troche mniejsza")
+elif (user_input - liczba < 10 and user_input - liczba != 0):
+    print("Podana liczba jest troche wieksza")
+elif (user_input - liczba > 10):
+    print("Podana liczba jest wieksza")
+elif (user_input - liczba > 50):
+    print("Podana liczba jest duzo wieksza")
+else: print("Odgadles wylosowana liczbe!")
+
+#zad 6
+import turtle
+
+#length = eval(input("Podaj dlugosc boku:  "))
+#n_sides = 3 #ilosc bokow
+
+#turtle.speed(20) #ustal predkosc zolwia
+
+#powtorz n_sides razy
+#for i in range(n_sides):
+ #   turtle.forward(length) #narysuj linie o danej dlugosci
+  #  turtle.right(120) #obroc sie w prawo o dany kat
+
+#turtle.mainloop() #nie zamykaj okna po narysowaniu
+
+
+#6-kat foremny:
+
+#lenght = eval(input("Podaj dlugosc boku:  "))
+#n_sides = 6  #ilosc bokow
+
+#turtle.speed(20)  #ustal predkosc zolwia
+
+#powtorz n_sides razy
+
+#for i in range(n_sides):
+   # turtle.forward(lenght) #narysuj linie o danej dlugosci
+  #  turtle.right(60) #obroc sie w prawo o dany kat
+
+#turtle.mainloop() #nie zamykaj okna po narysowaniu
+
+#n-kat foremny:
+
+lenght = eval(input("Podaj dlugosc boku: "))
+n_sides = eval(input("Podaj liczbe katow:  "))
+n_razy = eval(input("Podaj ile raz ma narysowac"))
+turtle.speed(20)
+
+#powtorz n_sides razy
+
+
+for i in range(n_sides):
+    turtle.forward(lenght)
+    turtle.right(360/n_sides) #obroc sie w prawo o kat
+
+turtle.mainloop() #nie zamykaj okna po narysowaniu
