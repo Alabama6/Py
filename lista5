@@ -1,1 +1,62 @@
+#zad1
 
+def nty_wyraz_ciagu(a1, n, r):
+    an = a1
+    if n > 1:
+        an = a1 + (n-1) * r
+    return an
+
+
+def suma_n_wyrazow_ciagu(a1, n, r):
+    lista = []
+    lista.append(a1)
+    for i in range(2, n+1):
+        an = nty_wyraz_ciagu(a1,i,r)
+        lista.append(an)
+    return sum(lista)
+
+
+
+
+#lista = [nty_wyraz_ciagu(a1, i, r) for i in range(2, n+1)]
+
+#zad 2
+import ciag_arytmetyczny
+
+a1 = int(input("Podaj wartosc a1: "))
+r = int(input("Podaj wartosc r: "))
+n = int(input("Podaj wartosc n: "))
+
+an = ciag_arytmetyczny.nty_wyraz_ciagu(a1,n,r)
+
+print("Wyraz ciagu nr: {} Wartosc: {} ".format(n, an))
+
+suma = ciag_arytmetyczny.suma_n_wyrazow_ciagu(a1,n,r)
+print("Suma {} wyrazow ciagu wynosi: {} ".format(n, suma))
+
+#zad 3
+def nty_wyraz_ciagu(c0,n):
+    cn = c0
+    for i in range(2, n+1):
+        if cn % 2 == 0:
+            cn = cn/2
+        else:
+            cn = 3 * cn + 1
+    return cn
+
+
+#zad 4
+def pierwsze_wystapienie_1(c0, n):
+    cn = c0
+    for i in range(2, n + 1):
+        if cn % 2 == 0:
+            cn = cn / 2
+        else:
+            cn = 3 * cn + 1
+        if cn == 1:
+            break
+    if cn != 1:
+        return None
+    return cn
+    
+#zad 5 ?
