@@ -1,0 +1,100 @@
+#zad1
+slownik = dict(maslo=2, mleko=8, kielbasa=4, szynka=23, wafle=4)
+
+print(slownik)
+
+for key, value in slownik.items():
+    print(key, value)
+
+srednia_cena = sum(slownik.values()) / len(slownik.values())
+print(srednia_cena)
+
+slownik.update(ogorek=1)
+
+print(slownik)
+
+srednia_cena = sum(slownik.values()) / len(slownik.values())
+
+print(srednia_cena)
+
+def funkcja(slownik):
+    print(sum(slownik.values()) / len(slownik.values()))
+
+funkcja(slownik)
+
+
+del slownik["ogorek"]
+print(slownik)
+
+#zad2
+def funkcja(a,b):
+
+    if a > b :
+        print(b)
+    else: print(a)
+
+funkcja(2,1)
+
+#zad3
+def funkcja(*args):
+    for arg in args:
+        return min(list(args)) #dopiero po list zadzialalo
+
+print((funkcja(10,3)))
+
+#zad4
+def fibonaci(n): #jk zadac a, b?
+    a = 0
+    b = 1
+
+print("Wartosc numer:",a,"Wynosi:",a)
+print("Wartosc numer:",b, "Wynosi:",b)
+
+for i in range (a, n-1):
+    a , b = b, a + b
+
+    print("Wartosc numer:", i+2,"wynosi:",b)
+fibonaci(10)
+
+#zad5
+def pobierz(komunikat):
+    user_input = eval(input(komunikat.ljust(20)))
+    return user_input
+a = pobierz("Ile wynosi wspolczynnik \"a\"?")
+b = pobierz("Ile wynosi wspolczynnik \"b\"?")
+c = pobierz("Ile wynosi wspolczynnik \"c\"?")
+x = pobierz("Zadaj wielkosc \"x\":")
+
+print(type(a))
+print(type(x))
+
+print(a,b,c)
+print("x wynosi: ", x)
+
+y = a * x ** x + b * x + c
+
+print("Wynik trojmianu kwadratowego o wspolczynnikach" , a, b, c, "i dla x = ", x, "wynosi: ",y)
+
+#zad6
+def funkcja(arg1, *args, kwarg1="key", kwarg2, kwarg3) #dlaczego tak nie moze byc?
+    print("arg1 = ", arg1)
+    print("args = ", args)
+    print("kwarg1 = ", kwarg1)
+    print("kwarg2 = ", kwarg2)
+    print("kwarg3 = ", kwarg3)
+
+funkcja('a', 'b', 'c', 'd', kwarg2 = "klucz", kwarg3 = "tez")
+
+
+
+def funkcja(*args, **kwargs):
+    print(type(args), type(kwargs))
+
+funkcja('a', 'b', kwarg = '2')
+
+#zad7 <- CZY TO DOBRZE ZROBIONE? DOKONCZYC
+
+def funkcja(*args, **kwargs):
+    print(list(args), list(kwargs))
+
+print(funkcja('a', 'b', kwarg = '2'))
